@@ -1,0 +1,37 @@
+soal no 1
+CREATE DATABASE myshop;
+
+soal no 2
+A. Table users
+create table users( id int PRIMARY KEY AUTO_INCREMENT, name varchar(255) not null, email varchar(255) not null, password varchar(255) not null )
+
+B. Table Categoris
+create table categories( id int PRIMARY KEY AUTO_INCREMENT, name varchar(255) not null)
+
+C. Table items
+CREATE TABLE items ( id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), price INTEGER, stock INTEGER, category_id INTEGER, FOREIGN KEY (category_id) REFERENCES categories(id) )
+
+soal no 3
+A. Table users
+INSERT INTO users (name, email, password) VALUES ('khairul halis', 'john@doe.com', 'john123'), ('Jane Doe', 'jane@doe.com', 'jenita123 bikin')
+
+B. Table Categoris
+INSERT INTO categories (name) VALUES ('gadget'), ('cloth'), ('men'), ('women'), ('branded')
+
+C.Table items
+INSERT INTO items (name, description, price, stock, category_id) VALUES ('Sumsang b50', 'hape keren dari merek sumsang', 4000000, 100, 1), ('Uniklooh', 'baju keren dari brand ternama', 500000, 50, 2), ('IMHO Watch', 'jam tangan anak yang jujur banget', 2000000, 10, 1)
+
+soal no 4
+A.
+SELECT id, name, email FROM users
+
+B.
+SELECT * FROM `items` WHERE stock > 30
+SELECT * FROM `items` WHERE name LIKE 'IMH%'
+
+C.
+SELECT items.*, categories.name from items RIGHT join categories on items.category_id = categories.id
+
+
+soal no 5
+UPDATE items SET stock=5 where id=2
